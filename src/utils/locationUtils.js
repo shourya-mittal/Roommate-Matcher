@@ -32,7 +32,7 @@ export const LOCATION_MAP = {
  */
 export function normalizeLocation(location) {
   if (!location) return "";
-  return LOCATION_MAP[location] || location;
+  return (LOCATION_MAP[location] || location).toLowerCase(); // 👈 add .toLowerCase()
 }
 
 /**
