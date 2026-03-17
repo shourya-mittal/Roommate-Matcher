@@ -1,6 +1,6 @@
 # 🏠 Roommate Matcher
 ## 🌐 Live Demo  
-https://your-app.vercel.app
+[Roommate Matcher](https://roommate-matcher-inky.vercel.app/)
 
 🚀 Preference-based roommate matching system with weighted scoring and deal-breaker filtering.
 
