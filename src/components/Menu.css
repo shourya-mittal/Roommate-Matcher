@@ -1,0 +1,246 @@
+.menu-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 2rem;
+  animation: fadeIn 0.5s ease-out;
+}
+
+.menu-title {
+  text-align: center;
+  margin-bottom: 2.5rem;
+  color: var(--text-primary);
+  font-size: 2rem;
+  font-weight: 600;
+  animation: slideDown 0.5s ease-out;
+}
+
+.menu-options {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  margin-bottom: 2rem;
+  padding: 0 1rem;
+}
+
+.menu-option {
+  background-color: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 0.75rem;
+  padding: 2rem;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 200px;
+  animation: slideUp 0.5s ease-out;
+  animation-fill-mode: both;
+}
+
+.menu-option:nth-child(1) { animation-delay: 0.1s; }
+.menu-option:nth-child(2) { animation-delay: 0.2s; }
+.menu-option:nth-child(3) { animation-delay: 0.3s; }
+.menu-option:nth-child(4) { animation-delay: 0.4s; }
+
+.menu-option:hover {
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: var(--shadow-md);
+  border-color: var(--primary);
+}
+
+.menu-option h3 {
+  color: var(--text-primary);
+  margin-bottom: 1rem;
+  font-size: 1.4rem;
+  font-weight: 600;
+}
+
+.menu-option p {
+  color: var(--text-secondary);
+  font-size: 1rem;
+  margin-bottom: 1.5rem;
+  line-height: 1.5;
+}
+
+.menu-option button {
+  width: 80%;
+  padding: 0.875rem;
+  background-color: var(--button-bg);
+  color: var(--button-text);
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 1.1rem;
+  transition: all 0.2s ease;
+}
+
+.menu-option button:hover {
+  background-color: var(--button-hover);
+  transform: translateY(-1px);
+}
+
+.status-section {
+  margin-top: 2rem;
+  padding: 0;
+  background: transparent;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.status-section h3 {
+  color: var(--text-primary);
+  margin-bottom: 1.5rem;
+  font-size: 1.4rem;
+  text-align: center;
+  font-weight: 600;
+}
+
+.status-options {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+  padding: 0;
+  background: transparent;
+}
+
+.status-option {
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--border-light);
+  border-radius: 0.75rem;
+  padding: 1.5rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-align: center;
+  min-height: 150px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  animation: slideUp 0.5s ease-out;
+  animation-fill-mode: both;
+}
+
+.status-option:nth-child(1) { animation-delay: 0.6s; }
+.status-option:nth-child(2) { animation-delay: 0.7s; }
+
+.status-option:hover {
+  background-color: var(--bg-tertiary);
+  border-color: var(--primary);
+  transform: translateY(-2px) scale(1.02);
+}
+
+.status-option.active {
+  background-color: var(--primary);
+  color: var(--button-text);
+  border-color: var(--primary);
+}
+
+.status-option h4 {
+  color: inherit;
+  margin-bottom: 0.75rem;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.status-option p {
+  color: inherit;
+  font-size: 1rem;
+  opacity: 0.9;
+  line-height: 1.5;
+}
+
+/* Animation Keyframes */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Dark mode specific adjustments */
+.dark-mode .status-option {
+  background-color: var(--bg-tertiary);
+}
+
+.dark-mode .status-option:hover {
+  background-color: var(--bg-secondary);
+}
+
+.dark-mode .status-option.active {
+  background-color: var(--primary);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .menu-options {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .status-options {
+    grid-template-columns: 1fr;
+  }
+
+  .menu-option {
+    min-height: 180px;
+    padding: 1.5rem;
+  }
+
+  .status-option {
+    min-height: 120px;
+    padding: 1.25rem;
+  }
+}
+
+/* Skeleton styles */
+.skeleton-menu {
+  padding: 2rem;
+}
+
+.skeleton-menu .menu-options {
+  gap: 1.5rem;
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+  .menu-button {
+    background-color: #3498db;
+  }
+  
+  .menu-button:hover {
+    background-color: #2980b9;
+  }
+  
+  .menu-button.logout {
+    background-color: #e74c3c;
+  }
+} 
